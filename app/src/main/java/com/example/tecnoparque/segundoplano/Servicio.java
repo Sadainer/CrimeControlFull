@@ -17,7 +17,7 @@ public class Servicio extends Service {
 int conteo=0;
 private Timer crono= new Timer();
 private static final long intervalo=5000;
-int tiempo=0;
+int tiempo=0,cambio=0,toque=0;
 boolean para=true;
     @Override
     public void onCreate() {
@@ -34,6 +34,9 @@ boolean para=true;
                     tiempo=0;
                 }else{
                     tiempo = tiempo + 1;
+                    if(tiempo-cambio>=2){
+                        conteo=0;
+                    }
                 }
 
                 Log.e("Sadainer", "Tiempo " + tiempo);
@@ -47,7 +50,8 @@ boolean para=true;
         conteo+=1;
         boolean screenOn = intent.getBooleanExtra("screen_state", false);
         Context context=this;
-
+        toque=conteo;
+        cambio=tiempo;
         if ((conteo>=3)&&(tiempo<=2)) {
             Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
             v.vibrate(100);
