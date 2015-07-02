@@ -36,7 +36,7 @@ int tiempo=0;
         crono.scheduleAtFixedRate(new TimerTask(){
             public void run(){
                 tiempo=tiempo+1;
-                Log.e("Sada", "Tiempo " + tiempo);
+                Log.e("Sadainer", "Tiempo " + tiempo);
             }
         },0,1000);
         if ((conteo>=3)&&(tiempo<=2)) {
