@@ -2,6 +2,27 @@
 <items version="2" >
 
     <item
+        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-7e79f09b1c8afd7d7e460a1d0c9e0356e50b7a90.jar" />
+    </item>
+    <item
+        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-a550b96390616f8815e0d70e50f646025b026719.jar" />
+    </item>
+    <item
+        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-f92c8a71c773bece5f6a6b04e778927ff3910eca.jar" />
+    </item>
+    <item
         jar="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"

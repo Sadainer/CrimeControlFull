@@ -18,6 +18,7 @@ int conteo=0;
 private Timer crono= new Timer();
 private static final long intervalo=5000;
 int tiempo=0;
+boolean para=true;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,6 +27,19 @@ int tiempo=0;
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         BroadcastReceiver mReceiver = new MyReceiverPantalla();
         registerReceiver(mReceiver, filter);
+
+        crono.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                if(conteo==0){
+                    tiempo=0;
+                }else{
+                    tiempo = tiempo + 1;
+                }
+
+                Log.e("Sadainer", "Tiempo " + tiempo);
+            }
+        }, 0, 1000);
+
     }
 
     @Override
@@ -33,28 +47,25 @@ int tiempo=0;
         conteo+=1;
         boolean screenOn = intent.getBooleanExtra("screen_state", false);
         Context context=this;
-        crono.scheduleAtFixedRate(new TimerTask(){
-            public void run(){
-                tiempo=tiempo+1;
-                Log.e("Sadainer", "Tiempo " + tiempo);
-            }
-        },0,1000);
+
         if ((conteo>=3)&&(tiempo<=2)) {
             Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
             v.vibrate(100);
             Log.e("Sada", "Alerta activada " + conteo + " Toques en "+ tiempo + " segundos");
             conteo=0;
             tiempo=0;
-            crono.cancel();
         }
         if((tiempo>2)&&(conteo>2)){
             Log.e("Sada", "Alerta NO activada " + conteo + " Toques en "+ tiempo + " segundos");
             conteo=0;
             tiempo=0;
-            crono.cancel();
         }
 
+
+
     }
+
+
     @Override
     public IBinder onBind(Intent intent) {
         throw new UnsupportedOperationException("Not yet implemented");
