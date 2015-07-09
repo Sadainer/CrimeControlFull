@@ -18,7 +18,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cc5a5b7-2680-47ed-a1b1-ecabef198e75" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/243254.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SegundoPlano.iws" />
@@ -1330,7 +1329,11 @@
       <created>1436457378478</created>
       <updated>1436457378478</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Imagen de prueba">
+      <created>1436473144752</created>
+      <updated>1436473144752</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1383,7 +1386,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Clases para servicios web" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clases para servicios web" />
+    <MESSAGE value="Imagen de prueba" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imagen de prueba" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
