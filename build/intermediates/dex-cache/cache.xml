@@ -2,53 +2,32 @@
 <items version="2" >
 
     <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-7e79f09b1c8afd7d7e460a1d0c9e0356e50b7a90.jar" />
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-9506ff79a69bb220e76ac6dd9ef721a17c2e9259.jar" />
     </item>
     <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-a550b96390616f8815e0d70e50f646025b026719.jar" />
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-639fb03ec63fb2a3a5a73aa7cff62b7e31417fc4.jar" />
     </item>
     <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\CrimeControlFull\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-f92c8a71c773bece5f6a6b04e778927ff3910eca.jar" />
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-11746621cf6ab08cde831e907fda2f0d382d82bf.jar" />
     </item>
     <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\pre-dexed\debug\classes-ba9ba12c8456e1e72e0fa22ac81d953f426cc300.jar" />
-    </item>
-    <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-192b29f81200201522e6b550e0d03537b2b31e5c.jar" />
-    </item>
-    <item
-        jar="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\pre-dexed\debug\classes-1ffb823dc7d94c704157432742fe483b54027543.jar" />
-    </item>
-    <item
-        jar="C:\Users\Alberth Rumbo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="C:\Users\TECNOPARQUE\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="D:\Desarrollo\Android\App\SegundoPlano\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-1eda37b53346170ee30b215c05498508fb2ed070.jar" />
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-a2f1db8351380212d8ccc758c8a5fb77b4914c94.jar" />
     </item>
 
 </items>
