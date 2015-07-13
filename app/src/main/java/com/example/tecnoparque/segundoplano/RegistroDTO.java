@@ -4,41 +4,35 @@ package com.example.tecnoparque.segundoplano;
  * Created by TECNOPARQUE on 08/04/2015.
  */
 public class RegistroDTO {
-    private String IdRegistro ;
     private String UsuarioCedula ;
-    private String Placa;
-    private String FechaRegistro ;
-    private String TipoRegistro ;
+    private String Local;
+    private String Direccion ;
+    private String IDRed ;
 
 
-    public String getIdRegistro() {
-        return IdRegistro;
-    }
-    public void setIdRegistro(String idRegistro) {
-        IdRegistro = idRegistro;
-    }
+
     public String getUsuarioCedula() {
         return UsuarioCedula;
     }
     public void setUsuarioCedula(String usuarioCedula) {
         UsuarioCedula = usuarioCedula;
     }
-    public String getPlaca() {
-        return Placa;
+    public String getLocal() {
+        return Local;
     }
-    public void setPlaca(String placa) {
-        Placa = placa;
+    public void setPlaca(String local) {
+        Local = local;
     }
-    public String getFechaRegistro() {
-        return FechaRegistro;
+    public String getDireccion() {
+        return Direccion;
     }
-    public void setFechaRegistro(String fechaRegistro) {
-        FechaRegistro = fechaRegistro;
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
     }
-    public String getTipoRegistro() {
-        return TipoRegistro;
+    public String getIDRed() {
+        return IDRed;
     }
-    public void setTipoRegistro(String tipoRegistro) {
-        TipoRegistro = tipoRegistro;
+    public void setIDRed(String iDRed) {
+        IDRed = iDRed;
     }
 }

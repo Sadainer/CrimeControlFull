@@ -10,14 +10,26 @@ import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import microsoft.aspnet.signalr.client.Platform;
+import microsoft.aspnet.signalr.client.http.android.AndroidPlatformComponent;
+import microsoft.aspnet.signalr.client.hubs.HubConnection;
+import microsoft.aspnet.signalr.client.hubs.HubProxy;
+
 
 public class MainActivity extends Activity {
 
- private static Context context;
+    private HubConnection _connection;
+    private HubProxy _hub;
+    private static Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Platform.loadPlatformComponent(new AndroidPlatformComponent());
+
+       program prg = new program();
+
 
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -51,4 +63,8 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }
