@@ -4,7 +4,9 @@
 
     <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission> -->
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,16 +27,22 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
         <receiver
             android:name=".MyReceiverPantalla"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
-                 <action android:name="android.intent.action.SCREEN_ON"/>
-                <action android:name="android.intent.action.SCREEN_OFF"/>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".ActivityAlarma"
+            android:label="@string/title_activity_activity_alarma" >
+        </activity>
     </application>
 
 </manifest>

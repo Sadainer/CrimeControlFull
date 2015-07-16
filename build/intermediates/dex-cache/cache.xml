@@ -2,27 +2,6 @@
 <items version="2" >
 
     <item
-        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-9506ff79a69bb220e76ac6dd9ef721a17c2e9259.jar" />
-    </item>
-    <item
-        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-639fb03ec63fb2a3a5a73aa7cff62b7e31417fc4.jar" />
-    </item>
-    <item
-        jar="C:\CrimeControlFull\app\libs\signalr-client-sdk-android.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a6417809c26c61a7e208100f8284c1acdc398428">
-        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\signalr-client-sdk-android-38447b24b85400a330e6bc864b04d4d2550c7d48.jar" />
-    </item>
-    <item
         jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -49,6 +28,27 @@
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-a2f1db8351380212d8ccc758c8a5fb77b4914c94.jar" />
+    </item>
+    <item
+        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-9506ff79a69bb220e76ac6dd9ef721a17c2e9259.jar" />
+    </item>
+    <item
+        jar="C:\CrimeControlFull\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\classes-639fb03ec63fb2a3a5a73aa7cff62b7e31417fc4.jar" />
+    </item>
+    <item
+        jar="C:\CrimeControlFull\app\libs\signalr-client-sdk-android.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a6417809c26c61a7e208100f8284c1acdc398428">
+        <dex dex="C:\CrimeControlFull\app\build\intermediates\pre-dexed\debug\signalr-client-sdk-android-38447b24b85400a330e6bc864b04d4d2550c7d48.jar" />
     </item>
 
 </items>

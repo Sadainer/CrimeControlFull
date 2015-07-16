@@ -20,7 +20,7 @@ public class RegistroDTO {
     public String getLocal() {
         return Local;
     }
-    public void setPlaca(String local) {
+    public void setLocal(String local) {
         Local = local;
     }
     public String getDireccion() {

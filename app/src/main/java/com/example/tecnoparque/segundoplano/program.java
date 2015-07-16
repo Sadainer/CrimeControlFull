@@ -1,31 +1,33 @@
 package com.example.tecnoparque.segundoplano;
-import com.google.gson.JsonElement;
 
-import java.util.Scanner;
+import android.content.Context;
+
+import com.google.gson.JsonElement;
 
 import microsoft.aspnet.signalr.client.Action;
 import microsoft.aspnet.signalr.client.ErrorCallback;
 import microsoft.aspnet.signalr.client.LogLevel;
 import microsoft.aspnet.signalr.client.Logger;
 import microsoft.aspnet.signalr.client.MessageReceivedHandler;
+import microsoft.aspnet.signalr.client.Platform;
+import microsoft.aspnet.signalr.client.http.android.AndroidPlatformComponent;
 import microsoft.aspnet.signalr.client.hubs.HubConnection;
 import microsoft.aspnet.signalr.client.hubs.HubProxy;
 
 public class program {
 
-    public static void main(String[] args) {
+    private Context cnt = null;
+    private String mData = null;
 
-        // Create a new console logger
-        Logger logger = new Logger() {
+    public program (String data) {
+        mData = data;
+    }
 
-            @Override
-            public void log(String message, LogLevel level) {
-                System.out.println(message);
-            }
-        };
+    public void execute() {
+        Platform.loadPlatformComponent(new AndroidPlatformComponent());
 
         // Connect to the server
-        HubConnection conn = new HubConnection("http://190.109.185.138/", "", true, logger);
+        HubConnection conn = new HubConnection("http://190.109.185.138:8002/", "", true, logger);
 
         // Create the hub proxy
         HubProxy proxy = conn.createHubProxy("ChatHub");
@@ -83,24 +85,19 @@ public class program {
             }
         });
 
-        // Read lines and send them as messages.
-        Scanner inputReader = new Scanner(System.in);
-
-        String line = inputReader.nextLine();
-        while (!"exit".equals(line)) {
-            proxy.invoke("send", "Console", line).done(new Action<Void>() {
-
-                @Override
-                public void run(Void obj) throws Exception {
-                    System.out.println("SENT!");
-                }
-            });
-
-            line = inputReader.next();
-        }
-
-        inputReader.close();
-
         conn.stop();
     }
-}
+        
+
+        // Create a new console logger
+        Logger logger = new Logger() {
+
+            @Override
+            public void log(String message, LogLevel level) {
+                System.out.println(message);
+            }
+        };
+
+
+    }
+
