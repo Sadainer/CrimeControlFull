@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 
 public class ActivityAlarma extends ActionBarActivity {
@@ -13,14 +16,18 @@ public class ActivityAlarma extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
         setContentView(R.layout.activity_activity_alarma);
 
-        /*String jsonMyObject = new String();
+        final TextView Usu= (TextView) findViewById(R.id.textView);
+        String jsonMyObject = new String();
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
             jsonMyObject = bundle.getString("Usuario");
         }
-        RegistroDTO myObject = new Gson().fromJson(jsonMyObject, RegistroDTO.class);*/
+        RegistroDTO myObject = new Gson().fromJson(jsonMyObject, RegistroDTO.class);
+        Usu.setText(myObject.getUsuarioCedula() + " " + myObject.getDireccion() + " " + myObject.getLocal() + " " + myObject.getIDRed());
         //Construimos el mensaje a mostrar
         player = MediaPlayer.create(ActivityAlarma.this,R.raw.alerta);
         player.start();

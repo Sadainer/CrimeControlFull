@@ -64,9 +64,6 @@ boolean para=true;
             conteo=0;
             tiempo=0;
         }
-
-
-
     }
 
 

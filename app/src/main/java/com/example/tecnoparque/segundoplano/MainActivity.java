@@ -1,10 +1,8 @@
 package com.example.tecnoparque.segundoplano;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.Menu;
@@ -13,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import microsoft.aspnet.signalr.client.Action;
@@ -44,20 +43,21 @@ public class MainActivity extends Activity {
 
         Platform.loadPlatformComponent(new AndroidPlatformComponent());
 
-        ConectarNotificacion();
+
+        ConectarSignalR ();
+
 
         sendButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                /*RegistroDTO Usu = new RegistroDTO();
+                RegistroDTO Usu = new RegistroDTO();
                 Usu.setUsuarioCedula("1065582510");
                 Usu.setDireccion("Calle central");
                 Usu.setLocal("Mi futuro");
-                Usu.setIDRed("Comercio");*/
+                Usu.setIDRed("Comercio");
 
-
-                proxy.invoke("send", "Console", "1065582510")
+                proxy.invoke("send", "Console", Usu)
                         /*.done(new Action<Void>() {
                    @Override
                     public void run(Void obj) throws Exception {
@@ -87,14 +87,14 @@ public class MainActivity extends Activity {
 
         conn.stop();*/
 
-        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+        /*IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         BroadcastReceiver mReceiver = new MyReceiverPantalla();
-        registerReceiver(mReceiver, filter);
+        registerReceiver(mReceiver, filter);*/
     }
 
 
-    private void ConectarNotificacion(){
+    private void ConectarSignalR(){
         // Create a new console logger
         Logger logger = new Logger() {
 
@@ -160,12 +160,15 @@ public class MainActivity extends Activity {
             @Override
             public void onMessageReceived(JsonElement json) {
                 System.out.println("RAW received message: " + json.toString());
+                MensajeDTO myObject = new Gson().fromJson(json, MensajeDTO.class);
+                RegistroDTO Usuario = myObject.getA().get(0);
+                System.out.println("Objeto mensaje" + new Gson().toJson(Usuario));
                 Intent intent =
                         new Intent(MainActivity.this, ActivityAlarma.class);
 
-                /*Bundle b = new Bundle();
-                b.putString("Usuario", new Gson().toJson(message));
-                intent.putExtras(b);*/
+                Bundle b = new Bundle();
+                b.putString("Usuario", new Gson().toJson(Usuario));
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
