@@ -11,15 +11,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import microsoft.aspnet.signalr.client.Action;
+import microsoft.aspnet.signalr.client.ConnectionState;
 import microsoft.aspnet.signalr.client.ErrorCallback;
 import microsoft.aspnet.signalr.client.LogLevel;
 import microsoft.aspnet.signalr.client.Logger;
 import microsoft.aspnet.signalr.client.MessageReceivedHandler;
 import microsoft.aspnet.signalr.client.Platform;
+import microsoft.aspnet.signalr.client.StateChangedCallback;
 import microsoft.aspnet.signalr.client.http.android.AndroidPlatformComponent;
 import microsoft.aspnet.signalr.client.hubs.HubConnection;
 import microsoft.aspnet.signalr.client.hubs.HubProxy;
@@ -37,60 +38,83 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         final EditText etPost = (EditText) findViewById(R.id.TxtTexto);
         Button sendButton = (Button) findViewById(R.id.butEnviar);
 
-        Platform.loadPlatformComponent(new AndroidPlatformComponent());
-
-
-        ConectarSignalR ();
-
-
+        startConnection ();
         sendButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                RegistroDTO Usu = new RegistroDTO();
+               /* RegistroDTO Usu = new RegistroDTO();
                 Usu.setUsuarioCedula("1065582510");
                 Usu.setDireccion("Calle central");
                 Usu.setLocal("Mi futuro");
-                Usu.setIDRed("Comercio");
+                Usu.setIDRed("Comercio");*/
 
-                proxy.invoke("send", "Console", Usu)
+                proxy.invoke("send", "Console", "Sadainer");
                         /*.done(new Action<Void>() {
                    @Override
                     public void run(Void obj) throws Exception {
                         System.out.println("SENT!");
                     }
                 })*/
-                ;
+
             }
         });
-        // Read lines and send them as messages.
-        /*Scanner inputReader = new Scanner(System.in);
 
-        String line = inputReader.nextLine();
-        while (!"exit".equals(line)) {
-            proxy.invoke("send", "Console", line).done(new Action<Void>() {
-
-                @Override
-                public void run(Void obj) throws Exception {
-                    System.out.println("SENT!");
-                }
-            });
-
-            line = inputReader.next();
-        }
-
-        inputReader.close();
-
-        conn.stop();*/
 
         /*IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         BroadcastReceiver mReceiver = new MyReceiverPantalla();
         registerReceiver(mReceiver, filter);*/
+    }
+
+    public void startConnection() {
+
+        Platform.loadPlatformComponent(new AndroidPlatformComponent());
+        String host = "http://190.109.185.138:8002/";
+        final HubConnection connection = new HubConnection(host);
+        proxy = connection.createHubProxy("ChatHub");
+
+        // subscribe to received - equal to `connection.received(function (data)` from javascript
+        connection.received(new MessageReceivedHandler() {
+
+            @Override
+            public void onMessageReceived(JsonElement json) {
+                System.out.println("RAW received message: " + json.toString());
+
+                // ADD HANDLING OF RECEIVED IN HERE
+            }
+        });
+
+        // equal to `connection.disconnected(function ()` from javascript
+        connection.closed(new Runnable() {
+
+            @Override
+            public void run() {
+
+            }
+        });
+
+        // equal to `connection.stateChanged(function (change)`
+        connection.stateChanged(new StateChangedCallback() {
+
+            @Override
+            public void stateChanged(ConnectionState oldState, ConnectionState newState) {
+                // ADD CODE TO HANDLE STATE CHANGES
+            }
+        });
+
+        // start the connection
+        connection.start()
+                .done(new Action<Void>() {
+
+                    @Override
+                    public void run(Void obj) throws Exception {
+                        System.out.println("Connected");
+                    }
+                });
     }
 
 
@@ -112,7 +136,7 @@ public class MainActivity extends Activity {
 
         proxy.subscribe(new Object() {
             @SuppressWarnings("unused")
-            public void messageReceived(String name, String message) {}
+            public void messageReceived(String message) {}
         });
 
 
@@ -160,18 +184,19 @@ public class MainActivity extends Activity {
             @Override
             public void onMessageReceived(JsonElement json) {
                 System.out.println("RAW received message: " + json.toString());
-                MensajeDTO myObject = new Gson().fromJson(json, MensajeDTO.class);
+                /*MensajeDTO myObject = new Gson().fromJson(json, MensajeDTO.class);
                 RegistroDTO Usuario = myObject.getA().get(0);
-                System.out.println("Objeto mensaje" + new Gson().toJson(Usuario));
+                System.out.println("Objeto mensaje" + new Gson().toJson(Usuario));*/
                 Intent intent =
                         new Intent(MainActivity.this, ActivityAlarma.class);
 
-                Bundle b = new Bundle();
+              /*  Bundle b = new Bundle();
                 b.putString("Usuario", new Gson().toJson(Usuario));
-                intent.putExtras(b);
+                intent.putExtras(b);*/
                 startActivity(intent);
             }
         });
+
     }
 
 
