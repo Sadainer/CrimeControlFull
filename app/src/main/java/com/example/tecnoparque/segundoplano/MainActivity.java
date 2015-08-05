@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import microsoft.aspnet.signalr.client.Action;
@@ -41,18 +42,18 @@ public class MainActivity extends Activity {
         final EditText etPost = (EditText) findViewById(R.id.TxtTexto);
         Button sendButton = (Button) findViewById(R.id.butEnviar);
 
-        startConnection ();
+        startConnection();
         sendButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-               /* RegistroDTO Usu = new RegistroDTO();
+                RegistroDTO Usu = new RegistroDTO();
                 Usu.setUsuarioCedula("1065582510");
                 Usu.setDireccion("Calle central");
                 Usu.setLocal("Mi futuro");
-                Usu.setIDRed("Comercio");*/
+                Usu.setIDRed("Comercio");
 
-                proxy.invoke("send", "Console", "Sadainer");
+                proxy.invoke("send", "Console", new Gson().toJson(Usu).toString());
                         /*.done(new Action<Void>() {
                    @Override
                     public void run(Void obj) throws Exception {
@@ -85,6 +86,14 @@ public class MainActivity extends Activity {
                 System.out.println("RAW received message: " + json.toString());
 
                 // ADD HANDLING OF RECEIVED IN HERE
+
+                Intent intent =
+                        new Intent(MainActivity.this, ActivityAlarma.class);
+
+                Bundle b = new Bundle();
+                b.putString("Usuario", json.toString());
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
@@ -112,7 +121,9 @@ public class MainActivity extends Activity {
 
                     @Override
                     public void run(Void obj) throws Exception {
+                        proxy.invoke("registerConId", "Android_S4");
                         System.out.println("Connected");
+
                     }
                 });
     }

@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 
 public class ActivityAlarma extends ActionBarActivity {
 
@@ -20,14 +22,16 @@ public class ActivityAlarma extends ActionBarActivity {
 
         final TextView Usu= (TextView) findViewById(R.id.textView);
         String jsonMyObject = new String();
-        /*Bundle bundle = this.getIntent().getExtras();
+
+        Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
             jsonMyObject = bundle.getString("Usuario");
         }
+        System.out.println("Prueba Alarma: " + jsonMyObject);
         RegistroDTO myObject = new Gson().fromJson(jsonMyObject, RegistroDTO.class);
         Usu.setText(myObject.getUsuarioCedula() + " " + myObject.getDireccion() + " " + myObject.getLocal() + " " + myObject.getIDRed());
         //Construimos el mensaje a mostrar
-        player = MediaPlayer.create(ActivityAlarma.this,R.raw.alerta);
+        /*player = MediaPlayer.create(ActivityAlarma.this,R.raw.alerta);
         player.start();*/
     }
 
